@@ -1,1 +1,119 @@
-(()=>{var e={475:()=>{function e(e,t){localStorage.setItem(`room-card-${e}`,t)}document.querySelectorAll(".link").forEach((e=>{e.addEventListener("click",(function(e){this.classList.add("visited")}))})),document.querySelectorAll(".room-card").forEach(((t,r)=>{t.querySelector(".room-card__button").addEventListener("click",(a=>{"active"===t.dataset.status&&(t.dataset.status="selected",e(r,"selected"))})),t.addEventListener("click",(a=>{"selected"===t.dataset.status?t.addEventListener("mouseleave",(()=>{t.dataset.status="reserved",e(r,"reserved")}),{once:!0}):"reserved"!==t.dataset.status||a.target.closest(".link")||(t.dataset.status="active",e(r,"active"))}))})),document.querySelectorAll(".room-card").forEach(((e,t)=>{const r=localStorage.getItem(`room-card-${t}`);r&&(e.dataset.status=r)}))}},t={};function r(a){var s=t[a];if(void 0!==s)return s.exports;var o=t[a]={exports:{}};return e[a](o,o.exports,r),o.exports}r.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return r.d(t,{a:t}),t},r.d=(e,t)=>{for(var a in t)r.o(t,a)&&!r.o(e,a)&&Object.defineProperty(e,a,{enumerable:!0,get:t[a]})},r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{"use strict";r(475)})()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./source/styles/style.scss":
+/*!**********************************!*\
+  !*** ./source/styles/style.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://webpack-trevel/./source/styles/style.scss?");
+
+/***/ }),
+
+/***/ "./source/index.js":
+/*!*************************!*\
+  !*** ./source/index.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ \"./source/styles/style.scss\");\n/* harmony import */ var _scripts_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/main.js */ \"./source/scripts/main.js\");\n/* harmony import */ var _scripts_main_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scripts_main_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\n\n//# sourceURL=webpack://webpack-trevel/./source/index.js?");
+
+/***/ }),
+
+/***/ "./source/scripts/main.js":
+/*!********************************!*\
+  !*** ./source/scripts/main.js ***!
+  \********************************/
+/***/ (() => {
+
+eval("document.querySelectorAll(\".link\").forEach((link) => {\n  link.addEventListener(\"click\", function (event) {\n    this.classList.add(\"visited\");\n  });\n});\n\nfunction saveCardState(index, status) {\n  localStorage.setItem(`room-card-${index}`, status);\n}\n\nfunction loadCardStates() {\n  const roomCards = document.querySelectorAll(\".room-card\");\n  roomCards.forEach((card, index) => {\n    const savedStatus = localStorage.getItem(`room-card-${index}`);\n    if (savedStatus) {\n      card.dataset.status = savedStatus;\n    }\n  });\n}\n\ndocument.querySelectorAll(\".room-card\").forEach((card, index) => {\n  const button = card.querySelector(\".room-card__button\");\n\n  button.addEventListener(\"click\", (event) => {\n    if (card.dataset.status === \"active\") {\n      card.dataset.status = \"selected\";\n      saveCardState(index, \"selected\");\n    }\n  });\n\n  card.addEventListener(\"click\", (event) => {\n    if (card.dataset.status === \"selected\") {\n      card.addEventListener(\n        \"mouseleave\",\n        () => {\n          card.dataset.status = \"reserved\";\n          saveCardState(index, \"reserved\");\n        },\n        { once: true }\n      );\n    } else if (\n      card.dataset.status === \"reserved\" &&\n      !event.target.closest(\".link\")\n    ) {\n      card.dataset.status = \"active\";\n      saveCardState(index, \"active\");\n    }\n  });\n});\n\nloadCardStates();\n\n\n//# sourceURL=webpack://webpack-trevel/./source/scripts/main.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./source/index.js");
+/******/ 	
+/******/ })()
+;
